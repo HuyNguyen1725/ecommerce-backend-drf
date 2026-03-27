@@ -12,17 +12,22 @@ and PostgreSQL.
 
 ## Setup
 ### Clone Repository
+```
 git clone https://github.com/HuyNguyen1725/ecommerce-backend-drf
 cd ecommerce-backend-drf
+```
 
 ### Create virtual environment
+```
 python -m venv venv
 source venv/bin/activate
-
+```
 ### Install dependencies
+```
 pip install -r requirements.txt
-
+```
 ### Create .env
+```
 DEBUG=True
 SECRET_KEY=your-secret-key
 ALLOWED_HOSTS=127.0.0.1,localhost
@@ -34,15 +39,18 @@ DB_HOST=localhost
 DB_PORT=5432
 
 JWT_SECRET_KEY=your-jwt-secret
-
+```
 ### Make migrations
+```
 python manage.py makemigrations
-
+```
 ### Migrate
+```
 python manage.py migrate
-
+```
 ### Run server
+```
 python manage.py runserver
-
+```
 ## Frontend
 https://github.com/HuyNguyen1725/ecommerce-frontend-react
