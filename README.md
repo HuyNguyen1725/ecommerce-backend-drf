@@ -52,5 +52,11 @@ python manage.py migrate
 ```
 python manage.py runserver
 ```
-## Frontend
+## Frontend Repo
 https://github.com/HuyNguyen1725/ecommerce-frontend-react
+
+## Api URL
+https://api.huynguyen1725.com
+
+## App URL
+https://huynguyen1725.com
