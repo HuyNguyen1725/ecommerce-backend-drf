@@ -2,12 +2,11 @@ from rest_framework import serializers
 from .models import Blog, BlogComment, Rate
 
 class BlogSerializer(serializers.ModelSerializer):
-    time = serializers.TimeField(format="%-I:%M%p", read_only=True)
-    date = serializers.DateField(format="%B %-d, %Y", read_only=True)
+    # time = serializers.TimeField(format="%-I:%M%p", read_only=True)
+    # date = serializers.DateField(format="%B %-d, %Y", read_only=True)
     class Meta:
         model = Blog
         fields = "__all__"
-        read_only_fields = ["time, date"]
 
 class BlogCommentSerializer(serializers.ModelSerializer):
     time = serializers.TimeField(format="%-I:%M%p", read_only=True)
