@@ -7,7 +7,8 @@ class BlogSerializer(serializers.ModelSerializer):
     author = serializers.CharField(source='author.username')
     class Meta:
         model = Blog
-        fields = "__all__"
+        fields = fields = ["id", "title", "content", "date", "time"]
+        read_only_fields = ["date", "time"]
 
 class BlogCommentSerializer(serializers.ModelSerializer):
     time = serializers.TimeField(format="%-I:%M%p", read_only=True)
