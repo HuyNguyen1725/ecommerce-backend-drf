@@ -6,8 +6,8 @@ class Blog(models.Model):
     title = models.CharField(max_length=150)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
-    time = models.TimeField(default=timezone.now)
-    date = models.DateField(auto_now_add=True)
+    time = models.TimeField(auto_now_add=True, blank=True, null=True)
+    date = models.DateField(auto_now_add=True, blank=True, null=True)
     image = models.ImageField(upload_to="blogs")
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blogs")
 
