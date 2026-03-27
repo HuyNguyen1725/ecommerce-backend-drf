@@ -9,11 +9,9 @@ from rest_framework.pagination import PageNumberPagination
 def blog_api_create(request):
     if not request.user.is_authenticated:
         return Response(status=status.HTTP_401_UNAUTHORIZED)
-    files = request.FILES.get("files")
     if request.method == "POST":
             serializer = BlogSerializer(data=request.data)
             if serializer.is_valid():
-                serializer["image"] = files
                 serializer.save()
                 return Response(serializer.data, status=status.HTTP_201_CREATED)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
