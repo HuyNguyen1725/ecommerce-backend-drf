@@ -7,8 +7,8 @@ from rest_framework.pagination import PageNumberPagination
 
 @api_view(["POST", "GET"])
 def blog_api_create(request):
-    if request.user.is_authenticated:
-        if request.method == "POST":
+    if request.method == "POST":
+        if request.user.is_authenticated:
             serializer = BlogSerializer(data=request.data)
             if serializer.is_valid():
                 serializer.save()
