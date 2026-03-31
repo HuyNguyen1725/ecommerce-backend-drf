@@ -39,10 +39,10 @@ def products_api(request):
         serializer = ProductSerializer(results, many=True)
         return paginator.get_paginated_response(serializer.data)
 
-        
+    
     if request.method == "POST":
         if not request.user.is_authenticated:
-            return Response(status=status.HTTP_403_FORBIDDEN)
+            return Response(status=status.HTTP_401_UNAUTHORIZED)
         data = request.data.copy()
         files = request.FILES.getlist("image")
         saved_filename = []
