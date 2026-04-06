@@ -20,7 +20,6 @@ class ProductSerializer(serializers.ModelSerializer):
 
 class BrandSerializer(serializers.ModelSerializer):
     products = ProductSerializer(many=True)
-    
     class Meta:
         model = Brand
         fields = ["id", "name", "products"]

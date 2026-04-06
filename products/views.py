@@ -39,7 +39,7 @@ def products_api(request):
         serializer = ProductSerializer(results, many=True)
         return paginator.get_paginated_response(serializer.data)
 
-    
+
     if request.method == "POST":
         if not request.user.is_authenticated:
             return Response(status=status.HTTP_401_UNAUTHORIZED)
@@ -85,7 +85,7 @@ def products_api(request):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
         else:
-            return Response(serializer.errors)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(["GET"])
 def product_category_api(request):

@@ -7,7 +7,6 @@ from .serializers import UserSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 
-
 @api_view(["POST"])
 def register(request):
     serializer = UserSerializer(data=request.data)

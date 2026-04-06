@@ -80,8 +80,6 @@ def blog_comment(request, blog_id):
             "replyComments": replySerializer.data
         }, status=status.HTTP_200_OK)
 
-
-
 @api_view(["POST", "GET"])
 def blog_api_rate(request, blog_id):
     if request.method == "POST":
